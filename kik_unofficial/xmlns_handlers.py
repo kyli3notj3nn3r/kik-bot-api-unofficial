@@ -47,8 +47,8 @@ class XMPPMessageHandler(XmppHandler):
             elif data.find('xiphias-mobileremote-call'):
                 # usually SafetyNet-related (?)
                 mobile_remote_call = data.find('xiphias-mobileremote-call')
-                log.warning("[!] Received mobile-remote-call with method '{}' of service '{}'".format(
-                    mobile_remote_call['method'], mobile_remote_call['service']))
+                ##log.warning("[!] Received mobile-remote-call with method '{}' of service '{}'".format(
+                    ##mobile_remote_call['method'], mobile_remote_call['service']))
             elif data.find('images'):
                 # images
                 self.callback.on_image_received(IncomingImageMessage(data))
