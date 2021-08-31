@@ -22,7 +22,7 @@ class User(Peer):
     """
     def __init__(self, xml_data: BeautifulSoup):
         if 'jid' not in xml_data.attrs:
-            print("Error: No jid in user xml {}, coming from datatypes/peers.py\nFeel free to ignote this error.".format(xml_data))
+            print("Error: No jid in user xml {}, coming from datatypes/peers.py\nFeel free to ignore this error.".format(xml_data))
         super().__init__(xml_data['jid'])
         self.username = xml_data.username.text if xml_data.username else None
         self.display_name = xml_data.find('display-name').text if xml_data.find('display-name') else None
