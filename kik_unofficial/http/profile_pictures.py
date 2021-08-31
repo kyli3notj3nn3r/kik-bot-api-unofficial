@@ -24,7 +24,7 @@ def set_background_picture(file, jid, username, password):
 def send(url, filename, jid, username, password):
     password_key = CryptographicUtils.key_from_password(username, password)
     if not os.path.isfile(filename):
-        raise KikApiException("File doesn't exist")
+        print("Error: File doesn't exist")
     headers = {
         'x-kik-jid': jid,
         'x-kik-password': password_key,
