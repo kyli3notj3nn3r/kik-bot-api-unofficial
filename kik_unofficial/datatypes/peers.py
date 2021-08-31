@@ -22,7 +22,7 @@ class User(Peer):
     """
     def __init__(self, xml_data: BeautifulSoup):
         if 'jid' not in xml_data.attrs:
-            raise KikApiException("No jid in user xml {}".format(xml_data))
+            print("Error: No jid in user xml {}. Ignore this error, it does not interfeare with anything.".format(xml_data))
         super().__init__(xml_data['jid'])
         self.username = xml_data.username.text if xml_data.username else None
         self.display_name = xml_data.find('display-name').text if xml_data.find('display-name') else None
@@ -59,7 +59,7 @@ class Group(Peer):
     """
     def __init__(self, xml_data: BeautifulSoup):
         if 'jid' not in xml_data.attrs:
-            raise KikApiException("No jid in group xml")
+            print("Error: No jid in group xml. Ignore this error, it does not interfeare with anything.")
         super().__init__(xml_data['jid'])
         self.members = [GroupMember(m) for m in xml_data.findAll('m')]
         self.banned_members = [GroupMember(m) for m in xml_data.findAll('b')]
