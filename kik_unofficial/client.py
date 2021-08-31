@@ -699,7 +699,7 @@ class KikClient:
         elif '@groups.kik.com' in jid:
             return True
         else:
-            raise exceptions.KikApiException('Not a valid jid')
+            print('Error: Not a valid jid, coming from client.py\nFeel free to ignore this error.')
 
 
 class KikConnection(Protocol):
