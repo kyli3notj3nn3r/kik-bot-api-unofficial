@@ -178,7 +178,7 @@ class GroupSearchResponse(XMPPResponse):
             self.group_join_token = result.group_join_token.token
 
         def __repr__(self):
-            return "GroupSearchEntry(jid={}, hashtag={}, name={}, members={})".format(self.jid, self.hashtag, self.display_name, self.member_count)
+            return "GroupSearchEntry(jid={}, hashtag={}, name={}, members={}, token={})".format(self.jid, self.hashtag, self.display_name, self.member_count, self.group_join_token)
 
 
 class GroupJoinRequest(XMPPElement):
