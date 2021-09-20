@@ -467,7 +467,7 @@ class OutgoingGIFMessage(XMPPElement):
         return list(packets)
 
     def get_gif_data(self, search_term):
-        apikey = ""  # add api key from https://tenor.com/gifapi
+        apikey = "KA6MUGYA31PP"  # add api key from https://tenor.com/gifapi
         if apikey == "":
             raise Exception("A tendor.com API key is required to search for GIFs images. please get one and change it")
 
