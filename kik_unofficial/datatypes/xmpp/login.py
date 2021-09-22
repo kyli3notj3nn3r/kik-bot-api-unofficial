@@ -167,7 +167,10 @@ class EstablishAuthenticatedSessionRequest(XMPPElement):
 
 class ConnectionFailedResponse:
     def __init__(self, data: BeautifulSoup):
-        self.message = data.find('msg').text
+        try:
+            self.message = data.find('msg').text
+        except AttributeError:
+            print("The connection failed, but Kik did not return a reason as to why...")
 
 
 class CaptchaElement:
